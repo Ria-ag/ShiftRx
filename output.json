@@ -1,0 +1,202 @@
+{
+  "extracted_constraints": [
+    {
+      "id": "c1",
+      "original_text": "Try to make it as fair as possible with almost equal division of AM and PM shifts.",
+      "constraint_type": "fairness",
+      "target": {
+        "employees": [
+          "A",
+          "D",
+          "S"
+        ],
+        "shift_type": "any",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "equal",
+        "value": null
+      },
+      "priority": "soft",
+      "confidence": 0.8,
+      "notes": "Fair division of AM and PM shifts"
+    },
+    {
+      "id": "c2",
+      "original_text": "One weekend day being covered by a per diem.",
+      "constraint_type": "coverage",
+      "target": {
+        "employees": [
+          "per diems"
+        ],
+        "shift_type": "weekend",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "min",
+        "value": 1
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "Per diem covers one weekend day"
+    },
+    {
+      "id": "c3",
+      "original_text": "All three FTEs rotate one weekend day.",
+      "constraint_type": "rotation",
+      "target": {
+        "employees": [
+          "A",
+          "D",
+          "S"
+        ],
+        "shift_type": "weekend",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "rotate",
+        "value": null
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "FTEs rotate one weekend day"
+    },
+    {
+      "id": "c4",
+      "original_text": "All three FTEs rotate one Friday PM shift.",
+      "constraint_type": "rotation",
+      "target": {
+        "employees": [
+          "A",
+          "D",
+          "S"
+        ],
+        "shift_type": "Friday_PM",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "rotate",
+        "value": null
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "FTEs rotate one Friday PM shift"
+    },
+    {
+      "id": "c5",
+      "original_text": "FTE D is 2nd in line in seniority and would prefer to not do more than 2 PM shifts/week.",
+      "constraint_type": "preference",
+      "target": {
+        "employees": [
+          "D"
+        ],
+        "shift_type": "PM",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "max",
+        "value": 2
+      },
+      "priority": "soft",
+      "confidence": 1.0,
+      "notes": "FTE D prefers not more than 2 PM shifts"
+    },
+    {
+      "id": "c6",
+      "original_text": "Senior most FTE S would like to not work any other Friday but her scheduled rotation.",
+      "constraint_type": "preference",
+      "target": {
+        "employees": [
+          "S"
+        ],
+        "shift_type": "Friday_PM",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "avoid",
+        "value": null
+      },
+      "priority": "soft",
+      "confidence": 1.0,
+      "notes": "FTE S prefers not to work other Fridays"
+    },
+    {
+      "id": "c7",
+      "original_text": "Two of the per diems only work 1 saturday per month.",
+      "constraint_type": "availability",
+      "target": {
+        "employees": [
+          "per diems"
+        ],
+        "shift_type": "weekend",
+        "time_scope": "per_month"
+      },
+      "rule": {
+        "operator": "max",
+        "value": 1
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "Per diems work only 1 Saturday per month"
+    },
+    {
+      "id": "c8",
+      "original_text": "One per diem prefers working Sundays.",
+      "constraint_type": "preference",
+      "target": {
+        "employees": [
+          "per diem"
+        ],
+        "shift_type": "weekend",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "prefer",
+        "value": null
+      },
+      "priority": "soft",
+      "confidence": 1.0,
+      "notes": "Per diem prefers working Sundays"
+    },
+    {
+      "id": "c9",
+      "original_text": "Senior most employee (S) is 0.6 FTE",
+      "constraint_type": "staffing",
+      "target": {
+        "employees": [
+          "S"
+        ],
+        "shift_type": "any",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "equal",
+        "value": 0.6
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "FTE S is 0.6 FTE"
+    },
+    {
+      "id": "c10",
+      "original_text": "Other 2 FTE(A and D) are 0.8 FTE",
+      "constraint_type": "staffing",
+      "target": {
+        "employees": [
+          "A",
+          "D"
+        ],
+        "shift_type": "any",
+        "time_scope": "per_week"
+      },
+      "rule": {
+        "operator": "equal",
+        "value": 0.8
+      },
+      "priority": "hard",
+      "confidence": 1.0,
+      "notes": "FTE A and D are 0.8 FTE"
+    }
+  ],
+  "unmodeled_rules": []
+}
