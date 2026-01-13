@@ -1,0 +1,13 @@
+Extract scheduling constraints from the following text.
+
+Context:
+- Domain: hospital pharmacy workforce scheduling
+- Scheduling horizon: weekly or monthly
+- Employees include FTEs and per diems
+
+Text:
+<<<
+{USER_INPUT}
+>>>
+
+Output valid JSON matching the provided schema
